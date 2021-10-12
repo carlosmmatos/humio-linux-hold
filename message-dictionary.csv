@@ -1,0 +1,211 @@
+MACRO NAME,VALUE,ORIGIN,CLASS,DESCRIPTION
+GET,1000,USER,CTL,Get status
+SET,1001,USER,CTL,Set status (enable/disable/auditd)
+LIST,1002,USER,DEP,List syscall rules -- deprecated
+ADD,1003,USER,DEP,Add syscall rule -- deprecated
+DEL,1004,USER,DEP,Delete syscall rule -- deprecated
+USER,1005,USER,DEP,Message from userspace -- deprecated
+LOGIN,1006,KERN,IND,Define the login ID and information
+WATCH_INS,1007,USER,DEP,Insert file/dir watch entry
+WATCH_REM,1008,USER,DEP,Remove file/dir watch entry
+WATCH_LIST,1009,USER,DEP,List all file/dir watches
+SIGNAL_INFO,1010,USER,CTL,Get info about sender of signal to auditd
+ADD_RULE,1011,USER,CTL,Add syscall filtering rule
+DEL_RULE,1012,USER,CTL,Delete syscall filtering rule
+LIST_RULES,1013,USER,CTL,List syscall filtering rules
+TRIM,1014,USER,CTL,Trim junk from watched tree
+MAKE_EQUIV,1015,USER,CTL,Append to watched tree
+TTY_GET,1016,USER,CTL,Get TTY auditing status
+TTY_SET,1017,USER,CTL,Set TTY auditing status
+SET_FEATURE,1018,USER,CTL,Turn an audit feature on or off
+GET_FEATURE,1019,USER,CTL,Get which features are enabled
+USER_AUTH,1100,USER,IND,User system access authentication
+USER_ACCT,1101,USER,IND,User system access authorization
+USER_MGMT,1102,USER,IND,User account attribute change
+CRED_ACQ,1103,USER,IND,User credential acquired
+CRED_DISP,1104,USER,IND,User credential disposed
+USER_START,1105,USER,IND,User session start
+USER_END,1106,USER,IND,User session end
+USER_AVC,1107,USER,IND,User space AVC (Access Vector Cache) message
+USER_CHAUTHTOK,1108,USER,IND,User account password or PIN changed
+USER_ERR,1109,USER,IND,User account state error
+CRED_REFR,1110,USER,IND,User credential refreshed
+USYS_CONFIG,1111,USER,IND,User space system config change
+USER_LOGIN,1112,USER,IND,User has logged in
+USER_LOGOUT,1113,USER,IND,User has logged out
+ADD_USER,1114,USER,IND,User account added
+DEL_USER,1115,USER,IND,User account deleted
+ADD_GROUP,1116,USER,IND,Group account added
+DEL_GROUP,1117,USER,IND,Group account deleted
+DAC_CHECK,1118,USER,IND,User space DAC check results
+CHGRP_ID,1119,USER,IND,User space group ID changed
+TEST,1120,USER,IND,Used for test success messages
+TRUSTED_APP,1121,USER,IND,Trusted app msg - freestyle text
+USER_SELINUX_ERR,1122,USER,IND,SELinux user space error
+USER_CMD,1123,USER,IND,User shell command and args
+USER_TTY,1124,USER,IND,Non-ICANON TTY input meaning
+CHUSER_ID,1125,USER,IND,Changed user ID supplemental data
+GRP_AUTH,1126,USER,IND,Authentication for group password
+SYSTEM_BOOT,1127,USER,IND,System boot
+SYSTEM_SHUTDOWN,1128,USER,IND,System shutdown
+SYSTEM_RUNLEVEL,1129,USER,IND,System runlevel change
+SERVICE_START,1130,USER,IND,Service (daemon) start
+SERVICE_STOP,1131,USER,IND,Service (daemon) stop
+GRP_MGMT,1132,USER,IND,Group account attribute was modified
+GRP_CHAUTHTOK,1133,USER,IND,Group account password or PIN changed
+MAC_CHECK,1134,USER,IND,User space MAC (Mandatory Access Control) decision results
+ACCT_LOCK,1135,USER,IND,User's account locked by admin
+ACCT_UNLOCK,1136,USER,IND,User's account unlocked by admin
+USER_DEVICE,1137,USER,IND,User space hotplug device changes
+SOFTWARE_UPDATE,1138,USER,IND,Software update event
+DAEMON_START,1200,USER,IND,Daemon startup record
+DAEMON_END,1201,USER,IND,Daemon normal stop record
+DAEMON_ABORT,1202,USER,IND,Daemon error stop record
+DAEMON_CONFIG,1203,USER,IND,Daemon config change
+DAEMON_RECONFIG,1204,USER,IND,Auditd should reconfigure
+DAEMON_ROTATE,1205,USER,IND,Auditd should rotate logs
+DAEMON_RESUME,1206,USER,IND,Auditd should resume logging
+DAEMON_ACCEPT,1207,USER,IND,Auditd accepted remote connection
+DAEMON_CLOSE,1208,USER,IND,Auditd closed remote connection
+DAEMON_ERR,1209,USER,IND,Auditd internal error
+SYSCALL,1300,KERN,SC,System call event information
+FS_WATCH,1301,KERN,DEP,Deprecated
+PATH,1302,KERN,SC,Filename path information
+IPC,1303,KERN,SC,System call IPC (Inter-Process Communication) object
+SOCKETCALL,1304,KERN,SC,System call socketcall arguments
+CONFIG_CHANGE,1305,KERN,IND,Audit system configuration change
+SOCKADDR,1306,KERN,SC,System call socket address argument information
+CWD,1307,KERN,SC,Current working directory
+EXECVE,1309,KERN,SC,Arguments supplied to the execve system call
+IPC_SET_PERM,1311,KERN,SC,IPC new permissions record type
+MQ_OPEN,1312,KERN,SC,POSIX MQ open record type
+MQ_SENDRECV,1313,KERN,SC,POSIX MQ send/receive record type
+MQ_NOTIFY,1314,KERN,SC,POSIX MQ notify record type
+MQ_GETSETATTR,1315,KERN,SC,POSIX MQ get/set attribute record type
+KERNEL_OTHER,1316,KERN,IND,For use by 3rd party modules
+FD_PAIR,1317,KERN,SC,Information for pipe and socketpair system calls
+OBJ_PID,1318,KERN,SC,ptrace target
+TTY,1319,KERN,IND,Input on an administrative TTY
+EOE,1320,KERN,CTL,End of multi-record event
+BPRM_FCAPS,1321,KERN,SC,Information about file system capabilities increasing permissions
+CAPSET,1322,KERN,SC,Record showing argument to sys_capset setting process-based capabilities
+MMAP,1323,KERN,SC,Mmap system call file descriptor and flags
+NETFILTER_PKT,1324,KERN,IND,Packets traversing netfilter chains
+NETFILTER_CFG,1325,KERN,IND/SC,Netfilter chain modifications
+SECCOMP,1326,KERN,IND,Secure Computing event
+PROCTITLE,1327,KERN,SC,Process Title info
+FEATURE_CHANGE,1328,KERN,IND,Audit feature changed value
+REPLACE,1329,KERN,CTL,Replace auditd if this probe unanswerd
+KERN_MODULE,1330,KERN,SC,Kernel Module events
+FANOTIFY,1331,KERN,SC,Fanotify access decision
+TIME_INJOFFSET,1332,KERN,SC,Timekeeping offset injected
+TIME_ADJNTPVAL,1333,KERN,SC,NTP value adjustment
+BPF,1334,KERN,SC,BPF load/unload
+EVENT_LISTENER,1335,KERN,SC,audit mcast sock join/part
+AVC,1400,KERN,SC,SELinux AVC (Access Vector Cache) denial or grant
+SELINUX_ERR,1401,KERN,SC,Internal SELinux errors
+AVC_PATH,1402,KERN,SC,"dentry, vfsmount pair from AVC"
+MAC_POLICY_LOAD,1403,KERN,SC,SELinux Policy file load
+MAC_STATUS,1404,KERN,SC,"SELinux mode (enforcing, permissive, off) changed"
+MAC_CONFIG_CHANGE,1405,KERN,SC,SELinux Boolean value modification
+MAC_UNLBL_ALLOW,1406,KERN,SC,NetLabel: allow unlabeled traffic
+MAC_CIPSOV4_ADD,1407,KERN,SC,NetLabel: add CIPSOv4 (Commercial Internet Protocol Security Option) DOI (Domain of Interpretation) entry
+MAC_CIPSOV4_DEL,1408,KERN,SC,NetLabel: del CIPSOv4 (Commercial Internet Protocol Security Option) DOI (Domain of Interpretation) entry
+MAC_MAP_ADD,1409,KERN,SC,NetLabel: add LSM (Linux Security Module) domain mapping
+MAC_MAP_DEL,1410,KERN,SC,NetLabel: del LSM (Linux Security Module) domain mapping
+MAC_IPSEC_ADDSA,1411,KERN,DEP,Not used
+MAC_IPSEC_DELSA,1412,KERN,DEP,Not used
+MAC_IPSEC_ADDSPD,1413,KERN,DEP,Not used
+MAC_IPSEC_DELSPD,1414,KERN,DEP,Not used
+MAC_IPSEC_EVENT,1415,KERN,SC,Audit an IPsec event
+MAC_UNLBL_STCADD,1416,KERN,SC,NetLabel: add a static label
+MAC_UNLBL_STCDEL,1417,KERN,SC,NetLabel: del a static label
+MAC_CALIPSO_ADD,1418,KERN,SC,NetLabel: add CALIPSO DOI (Domain of Interpretation) entry
+MAC_CALIPSO_DEL,1419,KERN,SC,NetLabel: delete CALIPSO DOI (Domain of Interpretation) entry
+AA,1500,KERN,?,
+APPARMOR_AUDIT,1501,KERN,SC,
+APPARMOR_ALLOWED,1502,KERN,SC,
+APPARMOR_DENIED,1503,KERN,SC,
+APPARMOR_HINT,1504,KERN,SC,
+APPARMOR_STATUS,1505,KERN,SC,
+APPARMOR_ERROR,1506,KERN,SC,
+APPARMOR_KILL,1507,KERN,SC,
+ANOM_PROMISCUOUS,1700,KERN,SC/IND,Device changed promiscuous mode
+ANOM_ABEND,1701,KERN,IND,Process ended abnormally
+ANOM_LINK,1702,KERN,SC?,Suspicious use of file links
+ANOM_CREAT,1703,KERN,SC?,Suspicious file creation
+INTEGRITY_DATA,1800,KERN,SC,Data integrity verification
+INTEGRITY_METADATA,1801,KERN,SC,Metadata integrity verification
+INTEGRITY_STATUS,1802,KERN,SC,Integrity enable status
+INTEGRITY_HASH,1803,KERN,SC,Integrity HASH type
+INTEGRITY_PCR,1804,KERN,SC,PCR (Platform Configuration Register) invalidation messages
+INTEGRITY_RULE,1805,KERN,SC/IND,Integrity Policy action
+INTEGRITY_EVM_XATTR,1806,KERN,SC,EVM XATTRS modifications
+INTEGRITY_POLICY_RULE,1807,KERN,SC,Integrity Policy rule
+KERNEL,2000,KERN,IND,Kernel audit status
+ANOM_LOGIN_FAILURES,2100,USER,IND,Failed login limit reached
+ANOM_LOGIN_TIME,2101,USER,IND,Login attempted at bad time
+ANOM_LOGIN_SESSIONS,2102,USER,IND,Maximum concurrent sessions reached
+ANOM_LOGIN_ACCT,2103,USER,IND,Login attempted to watched account
+ANOM_LOGIN_LOCATION,2104,USER,IND,Login from forbidden location
+ANOM_MAX_DAC,2105,USER,IND,Max DAC (Discretionary Access Control) failures reached
+ANOM_MAX_MAC,2106,USER,IND,Max MAC (Mandatory Access Control) failures reached
+ANOM_AMTU_FAIL,2107,USER,IND,AMTU (Abstract Machine Test Utility) failure
+ANOM_RBAC_FAIL,2108,USER,IND,RBAC (Role-Based Access Control) self test failure
+ANOM_RBAC_INTEGRITY_FAIL,2109,USER,IND,RBAC (Role-Based Access Control) file integrity test failure
+ANOM_CRYPTO_FAIL,2110,USER,IND,Crypto system test failure
+ANOM_ACCESS_FS,2111,USER,IND,Access of file or directory ended abnormally
+ANOM_EXEC,2112,USER,IND,Execution of file ended abnormally
+ANOM_MK_EXEC,2113,USER,IND,Make an executable
+ANOM_ADD_ACCT,2114,USER,IND,Adding a user account ended abnormally
+ANOM_DEL_ACCT,2115,USER,IND,Deleting a user account ended abnormally
+ANOM_MOD_ACCT,2116,USER,IND,Changing an account ended abnormally
+ANOM_ROOT_TRANS,2117,USER,IND,User became root
+ANOM_LOGIN_SERVICE,2118,USER,IND,Service acct attempted login
+RESP_ANOMALY,2200,USER,IND,Anomaly not reacted to
+RESP_ALERT,2201,USER,IND,Alert email was sent
+RESP_KILL_PROC,2202,USER,IND,Kill program
+RESP_TERM_ACCESS,2203,USER,IND,Terminate session
+RESP_ACCT_REMOTE,2204,USER,IND,User account locked from remote access
+RESP_ACCT_LOCK_TIMED,2205,USER,IND,User account locked for time
+RESP_ACCT_UNLOCK_TIMED,2206,USER,IND,User account unlocked from time
+RESP_ACCT_LOCK,2207,USER,IND,User account was locked
+RESP_TERM_LOCK,2208,USER,IND,Terminal was locked
+RESP_SEBOOL,2209,USER,IND,Set an SELinux boolean
+RESP_EXEC,2210,USER,IND,Execute a script
+RESP_SINGLE,2211,USER,IND,Go to single user mode
+RESP_HALT,2212,USER,IND,Take the system down
+RESP_ORIGIN_BLOCK,2213,USER,IND,Address blocked by iptables
+RESP_ORIGIN_BLOCK_TIMED,2214,USER,IND,Address blocked for time
+USER_ROLE_CHANGE,2300,USER,IND,User changed to a new SELinux role
+ROLE_ASSIGN,2301,USER,IND,Administrator assigned user to SELinux role
+ROLE_REMOVE,2302,USER,IND,Administrator removed user from SELinux role
+LABEL_OVERRIDE,2303,USER,IND,Administrator is overriding a SELinux label
+LABEL_LEVEL_CHANGE,2304,USER,IND,Object level SELinux label modified
+USER_LABELED_EXPORT,2305,USER,IND,Object exported with SELinux label
+USER_UNLABELED_EXPORT,2306,USER,IND,Object exported without SELinux label
+DEV_ALLOC,2307,USER,IND,Device was allocated
+DEV_DEALLOC,2308,USER,IND,Device was deallocated
+FS_RELABEL,2309,USER,IND,Filesystem relabeled
+USER_MAC_POLICY_LOAD,2310,USER,IND,Usersapce daemon loaded SELinux policy
+ROLE_MODIFY,2311,USER,IND,Administrator modified an SELinux role
+USER_MAC_CONFIG_CHANGE,2312,USER,IND,Change made to MAC (Mandatory Access Control) policy
+USER_MAC_STATUS,2313,USER,IND,Userspc daemon enforcing change
+CRYPTO_TEST_USER,2400,USER,IND,Cryptographic test results
+CRYPTO_PARAM_CHANGE_USER,2401,USER,IND,Cryptographic attribute change
+CRYPTO_LOGIN,2402,USER,IND,Cryptographic officer login
+CRYPTO_LOGOUT,2403,USER,IND,Cryptographic officer logout
+CRYPTO_KEY_USER,2404,USER,IND,"Create, delete, negotiate cryptographic key identifier"
+CRYPTO_FAILURE_USER,2405,USER,IND,"Fail decrypt, encrypt or randomize operation"
+CRYPTO_REPLAY_USER,2406,USER,IND,Cryptographic replay attack detected
+CRYPTO_SESSION,2407,USER,IND,Parameters set during TLS session establishment
+CRYPTO_IKE_SA,2408,USER,IND,Parameters related to IKE SA
+CRYPTO_IPSEC_SA,2409,USER,IND,Parameters related to IPSEC SA
+VIRT_CONTROL,2500,USER,IND,"Start, Pause, Stop VM"
+VIRT_RESOURCE,2501,USER,IND,Resource assignment
+VIRT_MACHINE_ID,2502,USER,IND,Binding of label to VM
+VIRT_INTEGRITY_CHECK,2503,USER,IND,Guest integrity results
+VIRT_CREATE,2504,USER,IND,Creation of guest image
+VIRT_DESTROY,2505,USER,IND,Destruction of guest image
+VIRT_MIGRATE_IN,2506,USER,IND,Inbound guest migration info
+VIRT_MIGRATE_OUT,2507,USER,IND,Outbound guest migration info
